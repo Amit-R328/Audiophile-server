@@ -1,0 +1,14 @@
+# Render Blueprint for the Audiophile API.
+# You can either import this file (New + > Blueprint) or configure the service
+# manually in the dashboard using the same values.
+services:
+  - type: web
+    name: audiophile-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node app.js
+    envVars:
+      # Set the actual value in the Render dashboard (kept out of git).
+      - key: MONGO_URI
+        sync: false
